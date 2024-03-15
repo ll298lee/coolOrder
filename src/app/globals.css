@@ -12,6 +12,14 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+a:focus, button:focus {
+  outline: none;
+}
+
+main {
+  padding-top: 52px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
