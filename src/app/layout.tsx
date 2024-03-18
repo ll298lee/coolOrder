@@ -3,8 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import '@blueprintjs/core/lib/css/blueprint.css'
 import '@blueprintjs/icons/lib/css/blueprint-icons.css'
+import StoreProvider from './StoreProvider'
 import AppBar from '@/components/AppBar'
-import { OverlaysProvider } from '@blueprintjs/core'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,8 +21,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <AppBar />
-        {children}
+        <StoreProvider>
+          <AppBar />
+          {children}
+        </StoreProvider>
       </body>
     </html>
   )
