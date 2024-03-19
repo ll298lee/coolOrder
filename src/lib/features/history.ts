@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { CartItem } from './cart'
+import { type CartItem } from './cart'
 
 type HistorySliceState = {
   orders: {

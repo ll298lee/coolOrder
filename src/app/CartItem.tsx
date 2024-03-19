@@ -1,4 +1,4 @@
-import { CartItem, addItem, removeItem } from '@/lib/features/cart'
+import { type CartItem, addItem, removeItem } from '@/lib/features/cart'
 import { useAppDispatch } from '@/lib/hooks'
 import { Button } from '@blueprintjs/core'
 
