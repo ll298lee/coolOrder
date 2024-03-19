@@ -1,7 +1,11 @@
 module.exports = {
-  plugins: ['@typescript-eslint'],
+  env: {
+    'jest/globals': true,
+  },
+  plugins: ['@typescript-eslint', 'jest'],
   extends: [
     'next/core-web-vitals',
+    'plugin:jest/recommended',
     'plugin:tailwindcss/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
