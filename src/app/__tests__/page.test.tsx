@@ -17,11 +17,7 @@ describe('Menu page component', () => {
     ;(useRouter as jest.Mock).mockReturnValue(mockRouter)
   })
   test('render menu categories', () => {
-    render(
-      <AppLayout>
-        <MenuPage />
-      </AppLayout>
-    )
+    render(<MenuPage />, { wrapper: AppLayout })
 
     expect(screen.getByText('Appetizer')).toBeInTheDocument()
     expect(screen.getByText('Drink')).toBeInTheDocument()
@@ -29,11 +25,7 @@ describe('Menu page component', () => {
   })
   describe('Cart behavior', () => {
     beforeEach(async () => {
-      render(
-        <AppLayout>
-          <MenuPage />
-        </AppLayout>
-      )
+      render(<MenuPage />, { wrapper: AppLayout })
       const menuItems = await screen.findAllByTestId('menu-item')
       const addButton = within(menuItems[0]).getByRole('button', { name: 'Add to cart' })
       fireEvent.click(addButton)

@@ -17,12 +17,13 @@ export default function HistoryPage() {
       {orders.length === 0 && <div>Please place your order in menu page.</div>}
       <ul className='space-y-4'>
         {orders.map((order, index) => (
-          <li key={order.timestamp}>
+          <li key={order.timestamp} data-testid='order-detail'>
             <h3 className='mb-1 text-xl font-bold'>{`Order #${index + 1}`}</h3>
             <ul>
               {order.items.map((item) => (
                 <li
                   key={item.id}
+                  data-testid='order-item'
                   className='flex items-center justify-between border-b py-4'>
                   <span>{item.name}</span>
                   <span>x{item.count}</span>
