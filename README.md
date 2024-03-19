@@ -12,6 +12,7 @@ This project is a demonstration of a food order system client built using Next.j
 ## Getting Started
 
 To get a local copy of this project up and running, follow these steps:
+(Make sure you are using Node.js version >= 18.18.0)
 
 1. Clone the repository using the following command:
 
@@ -22,6 +23,7 @@ To get a local copy of this project up and running, follow these steps:
 2. Install the necessary packages by running:
 
     ```bash
+    cd coolOrder
     yarn install
     ```
 
