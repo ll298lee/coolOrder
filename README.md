@@ -32,6 +32,7 @@ To start the local development server, use the following command:
 ```bash
 yarn dev
 ```
+This will start a local server at http://localhost:3000
 
 ## Running Tests
 
