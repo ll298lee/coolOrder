@@ -8,6 +8,7 @@ This project is a demonstration of a food order system client built using Next.j
 - **React Version:** 18
 - **Demo URL:** [Food Order System Demo](https://cool-order-1lcuwj25f-ll298lee.vercel.app/)
 - **Node.js Version:** 18.18.0
+- **Yarn Version:** 1.22.22
 
 ## Getting Started
 
@@ -42,3 +43,12 @@ To run tests for the project, execute the following command:
 ```bash
 yarn test
 ```
+
+## Troubleshoot
+If you encounter error when running test that looks like
+```
+Error [ERR_REQUIRE_ESM]: require() of ES Module string-width/index.js
+...
+```
+
+Make sure you are using yarn version 1.22.22 and then delete `/node_modules` and `yarn.lock` and run `yarn install` again
