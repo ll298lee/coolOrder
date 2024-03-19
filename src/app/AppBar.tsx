@@ -10,11 +10,18 @@ import {
   Button,
 } from '@blueprintjs/core'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import CartDrawer from './CartDrawer'
+import { useAppSelector } from '@/lib/hooks'
 
 export default function AppBar() {
   const [isCartDrawerOpen, setIsCartDrawerOpen] = useState(false)
+  const cartItems = useAppSelector((state) => state.cart.items)
+  const count = useMemo(() => {
+    return cartItems.reduce((accu, item) => {
+      return accu + item.count
+    }, 0)
+  }, [cartItems])
 
   const toggleCartDrawer = () => {
     setIsCartDrawerOpen((prev) => !prev)
@@ -36,7 +43,14 @@ export default function AppBar() {
         </Link>
       </NavbarGroup>
       <NavbarGroup align={Alignment.RIGHT}>
-        <Button minimal icon='shopping-cart' text='Cart' onClick={toggleCartDrawer} />
+        <div className='relative'>
+          <Button minimal icon='shopping-cart' text='Cart' onClick={toggleCartDrawer} />
+          {count > 0 && (
+            <div className='fixed right-2 top-2 flex min-w-[20px] items-center justify-center rounded-full bg-red-500 p-[2px] text-xs text-white'>
+              {count}
+            </div>
+          )}
+        </div>
       </NavbarGroup>
       <CartDrawer isOpen={isCartDrawerOpen} onClose={closeCartDrawer} />
     </Navbar>

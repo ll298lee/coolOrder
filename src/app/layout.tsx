@@ -4,7 +4,7 @@ import './globals.css'
 import '@blueprintjs/core/lib/css/blueprint.css'
 import '@blueprintjs/icons/lib/css/blueprint-icons.css'
 import StoreProvider from './StoreProvider'
-import AppBar from '@/components/AppBar'
+import AppBar from '@/app/AppBar'
 
 const inter = Inter({ subsets: ['latin'] })
 

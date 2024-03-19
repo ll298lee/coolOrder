@@ -1,13 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { CartItem } from './cart'
+
+type HistorySliceState = {
+  orders: {
+    timestamp: number
+    items: CartItem[]
+  }[]
+}
+
+const initialState: HistorySliceState = {
+  orders: [],
+}
 
 export const historySlice = createSlice({
   name: 'history',
-  initialState: {
-    orders: [],
-  },
+  initialState,
   reducers: {
-    createOrder: (state, action) => {},
-    clearHistory: (state) => {},
+    createOrder: (state, action) => {
+      const cartItems = action.payload
+      state.orders.push({
+        timestamp: new Date().getTime(),
+        items: cartItems,
+      })
+    },
+    clearHistory: (state) => {
+      state.orders = []
+    },
   },
 })
 
