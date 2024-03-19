@@ -1,7 +1,7 @@
 'use client'
 
 import { useAppSelector } from '@/lib/hooks'
-import groupBy from 'lodash-es/groupBy'
+import { groupBy } from 'lodash-es'
 import MenuItem from './MenuItem'
 
 export default function Home() {

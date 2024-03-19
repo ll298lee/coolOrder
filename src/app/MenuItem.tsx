@@ -9,7 +9,9 @@ export default function MenuItem({ item }: { item: Dish }) {
     dispatch(addItem(item))
   }
   return (
-    <li className='flex items-center justify-between border-b py-4'>
+    <li
+      className='flex items-center justify-between border-b py-4'
+      data-testid='menu-item'>
       <span>{item.name}</span>
       <Button onClick={addToCart}>Add to cart</Button>
     </li>

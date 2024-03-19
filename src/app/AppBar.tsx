@@ -44,7 +44,13 @@ export default function AppBar() {
       </NavbarGroup>
       <NavbarGroup align={Alignment.RIGHT}>
         <div className='relative'>
-          <Button minimal icon='shopping-cart' text='Cart' onClick={toggleCartDrawer} />
+          <Button
+            minimal
+            icon='shopping-cart'
+            text='Cart'
+            onClick={toggleCartDrawer}
+            data-testid='cart-button'
+          />
           {count > 0 && (
             <div className='fixed right-2 top-2 flex min-w-[20px] items-center justify-center rounded-full bg-red-500 p-[2px] text-xs text-white'>
               {count}

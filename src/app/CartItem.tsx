@@ -11,11 +11,15 @@ export default function CartItem({ cartItem }: { cartItem: CartItem }) {
     dispatch(removeItem(cartItem))
   }
   return (
-    <li className='flex items-center justify-between border-b p-4 '>
+    <li
+      className='flex items-center justify-between border-b p-4'
+      data-testid='cart-item'>
       <div>{cartItem.name}</div>
       <div className='flex items-center gap-3'>
         <Button onClick={decrement}>-</Button>
-        <div className='w-6 text-center'>{cartItem.count}</div>
+        <div className='w-6 text-center' data-testid='cart-item-count'>
+          {cartItem.count}
+        </div>
         <Button onClick={increment}>+</Button>
       </div>
     </li>
